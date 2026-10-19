@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kookatelier Sel &amp; Poivre in Gent: kookworkshops in kleine groepen, met echte chefs.">
+  <title>Sel &amp; Poivre – kookatelier in Gent</title>
+
+  <!-- Tailwind CSS 4.3.3 (Play CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.3"></script>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <!-- Google Fonts: DM Serif Display (titels) en Source Sans 3 (tekst) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Eigen thema en componenten -->
+  <style type="text/tailwindcss">
+    /* ---------- 1.5 – Oefening 1 - Het startproject van Sel & Poivre ---------- */
+    /* Huisstijl van Sel & Poivre: elke variabele in @theme wordt een reeks utility-classes */
+    @theme {
+      --color-basil: #2f5d50;
+      --color-basil-dark: #1f3f36;
+      --color-tomato: #d0532f;
+      --color-tomato-dark: #a63d20;
+      --color-flour: #fbf8f2;
+      --color-linen: #f0e8da;
+      --color-pepper: #22262a;
+
+      --font-display: "DM Serif Display", Georgia, serif;
+      --font-sans: "Source Sans 3", system-ui, sans-serif;
+    }
+
+    /* ---------- 1.6 – Oefening 2 - Navbar en hero ---------- */
+    /* Knoppen: één vorm (btn) en een kleur (btn-tomato) */
+    @layer components {
+      .btn {
+        @apply inline-flex items-center justify-center gap-2 rounded-full border-2 px-6 py-2.5 font-semibold transition;
+      }
+
+      .btn-tomato {
+        @apply border-tomato-dark bg-tomato-dark text-white hover:border-basil hover:bg-basil;
+      }
+    }
+
+    /* ---------- 1.6 – Oefening 2 - Navbar en hero ---------- */
+    @layer components {
+      /* Tweede knopkleur: een rand in basilicumgroen */
+      .btn-ghost {
+        @apply border-basil text-basil hover:bg-basil hover:text-white;
+      }
+    }
+  </style>
+</head>
+<body class="bg-flour font-sans text-pepper antialiased">
+  <header class="sticky top-0 z-50 border-b border-pepper/10 bg-flour/95 backdrop-blur">
+    <nav class="mx-auto flex max-w-5xl flex-wrap items-center justify-between px-4 py-4" aria-label="Hoofdnavigatie">
+      <a href="#home" class="flex items-center gap-2 font-display text-2xl text-basil">
+        <i class="bi bi-fire text-tomato" aria-hidden="true"></i>
+        Sel &amp; Poivre
+      </a>
+      <button id="navToggle" type="button" class="rounded-full border border-pepper/20 px-3 py-1 text-2xl md:hidden" aria-controls="navMenu" aria-expanded="false" aria-label="Menu openen of sluiten">
+        <i class="bi bi-list" aria-hidden="true"></i>
+      </button>
+      <div id="navMenu" class="hidden w-full md:flex md:w-auto md:items-center md:gap-6">
+        <ul class="flex flex-col py-4 font-semibold md:flex-row md:gap-5 md:py-0">
+          <li><a class="block py-2 text-pepper/70 transition hover:text-tomato-dark" href="#binnenkort">Binnenkort</a></li>
+          <li><a class="block py-2 text-pepper/70 transition hover:text-tomato-dark" href="#atelier">Het atelier</a></li>
+          <li><a class="block py-2 text-pepper/70 transition hover:text-tomato-dark" href="#programma">Programma</a></li>
+          <li><a class="block py-2 text-pepper/70 transition hover:text-tomato-dark" href="#inschrijven">Inschrijven</a></li>
+        </ul>
+        <a class="btn btn-tomato mb-4 md:mb-0" href="#inschrijven">Schrijf je in</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="py-12 md:py-20">
+      <div class="mx-auto grid max-w-5xl items-center gap-10 px-4 md:grid-cols-2 md:gap-14">
+        <div>
+          <p class="mb-5 inline-flex items-center gap-2 rounded-full bg-linen px-4 py-1.5 text-sm font-semibold text-basil">
+            <i class="bi bi-calendar-heart" aria-hidden="true"></i> Nieuw najaarsprogramma
+          </p>
+          <h1 class="mb-5 font-display text-5xl leading-tight md:text-6xl">Koken leer je <em class="text-tomato-dark">met je handen</em></h1>
+          <p class="mb-8 text-lg text-pepper/75">Workshops in kleine groepen, met chefs die hun vak kennen. Je kookt zelf, je proeft zelf en je neemt het recept mee naar huis.</p>
+          <div class="mb-10 flex flex-wrap gap-3">
+            <a class="btn btn-tomato" href="#binnenkort">Bekijk de workshops</a>
+            <a class="btn btn-ghost" href="#atelier">
+              <i class="bi bi-people" aria-hidden="true"></i> Ons team
+            </a>
+          </div>
+          <dl class="grid grid-cols-3 items-start gap-4 border-t border-pepper/10 pt-6">
+            <div class="flex flex-col-reverse">
+              <dt class="text-sm text-pepper/70">workshops per seizoen</dt>
+              <dd class="font-display text-3xl text-basil">12</dd>
+            </div>
+            <div class="flex flex-col-reverse">
+              <dt class="text-sm text-pepper/70">chefs</dt>
+              <dd class="font-display text-3xl text-basil">8</dd>
+            </div>
+            <div class="flex flex-col-reverse">
+              <dt class="text-sm text-pepper/70">deelnemers per groep</dt>
+              <dd class="font-display text-3xl text-basil">max. 14</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="md:order-first">
+          <img src="img/hero.jpg" class="aspect-square w-full rounded-[2.5rem] object-cover shadow-xl" alt="Handen die verse tagliatelle uit een pastamachine halen, boven een met bloem bestoven werkblad" width="800" height="800">
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
